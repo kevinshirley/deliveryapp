@@ -5,24 +5,20 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { HEADER_CTA_ICON } from '../../../styles/styles-variables';
+import Home from '../../home';
+import Maps from '../../maps';
+import Deliveries from '../../deliveries';
 
 const Tab = createBottomTabNavigator();
-
-const SendIcon = () => (
-  <FontAwesome name='send' size={24} color={HEADER_CTA_ICON.COLOR} />
-);
-
-const SendIcon2 = () => (
-  <MaterialIcons name='attach-money' size={24} color={HEADER_CTA_ICON.COLOR} />
-);
 
 export default function MaterialBottomNavigation() {
   return (
     <View style={styles.container}>
       <NavigationContainer>
         <Tab.Navigator>
-          <Tab.Screen name="Home" component={SendIcon} />
-          <Tab.Screen name="Settings" component={SendIcon2} />
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Map" component={Maps} />
+          <Tab.Screen name="Deliveries" component={Deliveries} />
         </Tab.Navigator>
       </NavigationContainer>
     </View>
@@ -31,6 +27,6 @@ export default function MaterialBottomNavigation() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
   },
 });
